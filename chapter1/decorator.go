@@ -6,7 +6,7 @@ type IProcess interface {
 	process()
 }
 
-type ProcessClass struct {}
+type ProcessClass struct{}
 
 func (process *ProcessClass) process() {
 	fmt.Println("ProcessClass process")
@@ -17,9 +17,9 @@ type ProcessDecorator struct {
 }
 
 func (decorator *ProcessDecorator) process() {
-	if decorator.processInstance==nil{
+	if decorator.processInstance == nil {
 		fmt.Println("ProcessDecorator process")
-	}else{
+	} else {
 		fmt.Printf("ProcessDecorator process and ")
 		decorator.processInstance.process()
 	}
@@ -27,8 +27,8 @@ func (decorator *ProcessDecorator) process() {
 
 func main() {
 	var process = &ProcessClass{}
-	var decorator=&ProcessDecorator{}
+	var decorator = &ProcessDecorator{}
 	decorator.process()
-	decorator.processInstance=process
+	decorator.processInstance = process
 	decorator.process()
 }

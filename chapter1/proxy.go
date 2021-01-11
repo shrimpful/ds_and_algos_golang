@@ -17,14 +17,14 @@ type VirtualProxy struct {
 }
 
 func (virtualProxy *VirtualProxy) performAction() {
-	if virtualProxy.realObject==nil{
-		virtualProxy.realObject=&RealObject{}
+	if virtualProxy.realObject == nil {
+		virtualProxy.realObject = &RealObject{}
 	}
 	fmt.Println("Virtual Proxy performAction()")
 	virtualProxy.realObject.performAction()
 }
 
 func main() {
-	var object VirtualProxy=VirtualProxy{}
+	var object VirtualProxy = VirtualProxy{}
 	object.performAction()
 }
